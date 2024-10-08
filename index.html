@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenida</title>
+    
+</head>
+<body>
+    <div id="bienvenida">
+        <input type="text" id="nombre" placeholder="Ingresa tu nombre"><br>
+        <input type="number" id="edad" placeholder="Ingresa tu edad"><br>
+        <input type="text" id="ciudad" placeholder="Ingresa tu ciudad"><br>
+        <button onclick="mostrarMensaje()">Enviar</button><br>
+        <p id="mensaje"></p>
+        <p id="diasVividos"></p>
+    </div>
+
+    <script>
+        function mostrarMensaje() {
+            let nombre = document.getElementById('nombre').value;
+            let edad = document.getElementById('edad').value;
+            let ciudad = document.getElementById('ciudad').value;
+            
+            // Mensaje de bienvenida personalizado
+            document.getElementById('mensaje').innerHTML = `¡Bienvenido ${nombre} de ${ciudad}, que tiene ${edad} años!`;
+            
+            // Cálculo de días vividos
+            let diasVividos = edad * 365;  // Aproximando a 365 días por año
+            document.getElementById('diasVividos').innerHTML = `Has vivido aproximadamente ${diasVividos} días.`;
+        }
+    </script>
+</body>
+</html>
